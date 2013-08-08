@@ -32,7 +32,7 @@ module Mods
 # FIXME: may want to deal with camelcase vs. underscore in method_missing 
 
         # ABSTRACT -------------------------------------------------------------------------------
-        t.abstract :path => '/m:mods/m:abstract'
+        t.abstract :path => ' /m:modsCollection/m:mods/m:abstract'
         t._abstract :path => '//m:abstract' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           n.type_at :path => '@type', :accessor => lambda { |a| a.text }
@@ -42,7 +42,7 @@ module Mods
         end
 
         # ACCESS_CONDITION -----------------------------------------------------------------------
-        t.accessCondition :path => '/m:mods/m:accessCondition'
+        t.accessCondition :path => ' /m:modsCollection/m:mods/m:accessCondition'
         t._accessCondition :path => '//m:accessCondition' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           n.type_at :path => '@type', :accessor => lambda { |a| a.text }
@@ -52,7 +52,7 @@ module Mods
         end
 
         # CLASSIFICATION -------------------------------------------------------------------------
-        t.classification :path => '/m:mods/m:classification'
+        t.classification :path => ' /m:modsCollection/m:mods/m:classification'
         t._classification :path => '//m:classification' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           n.edition :path => '@edition', :accessor => lambda { |a| a.text }
@@ -65,13 +65,13 @@ module Mods
         end        
 
         # EXTENSION ------------------------------------------------------------------------------
-        t.extension :path => '/m:mods/m:extension'
+        t.extension :path => ' /m:modsCollection/m:mods/m:extension'
         t._extension :path => '//m:extension' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
         end
 
         # GENRE ----------------------------------------------------------------------------------
-        t.genre :path => '/m:mods/m:genre'
+        t.genre :path => ' /m:modsCollection/m:mods/m:genre'
         t._genre :path => '//m:genre' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           n.type_at :path => '@type', :accessor => lambda { |a| a.text }
@@ -85,7 +85,7 @@ module Mods
         end
 
         # IDENTIIER ------------------------------------------------------------------------------
-        t.identifier :path => '/m:mods/m:identifier'
+        t.identifier :path => ' /m:modsCollection/m:mods/m:identifier'
         t._identifier :path => '//m:identifier' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           n.invalid :path => '@invalid', :accessor => lambda { |a| a.text }
@@ -96,7 +96,7 @@ module Mods
         end
 
         # LANGUAGE -------------------------------------------------------------------------------
-        t.language :path => '/m:mods/m:language'
+        t.language :path => ' /m:modsCollection/m:mods/m:language'
         t._language :path => '//m:language' do |n|
           # attributes
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
@@ -117,7 +117,7 @@ module Mods
         end # t.language
 
         # LOCATION -------------------------------------------------------------------------------
-        t.location :path => '/m:mods/m:location'
+        t.location :path => ' /m:modsCollection/m:mods/m:location'
         t._location :path => '//m:location' do |n|
           # attributes
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
@@ -144,7 +144,7 @@ module Mods
         end # t.location
 
         # NAME ------------------------------------------------------------------------------------
-        t.plain_name :path => '/m:mods/m:name'
+        t.plain_name :path => ' /m:modsCollection/m:mods/m:name'
         t._plain_name :path => '//m:name' do |n|
           Mods::Name::ATTRIBUTES.each { |attr_name|
             if attr_name != 'type'
@@ -263,15 +263,15 @@ module Mods
           }
         end # t._plain_name
 
-        t.personal_name :path => '/m:mods/m:name[@type="personal"]'
+        t.personal_name :path => ' /m:modsCollection/m:mods/m:name[@type="personal"]'
         t._personal_name :path => '//m:name[@type="personal"]'
-        t.corporate_name :path => '/m:mods/m:name[@type="corporate"]'
+        t.corporate_name :path => ' /m:modsCollection/m:mods/m:name[@type="corporate"]'
         t._corporate_name :path => '//m:name[@type="corporate"]'
-        t.conference_name :path => '/m:mods/m:name[@type="conference"]'
+        t.conference_name :path => ' /m:modsCollection/m:mods/m:name[@type="conference"]'
         t._conference_name :path => '//m:name[@type="conference"]'
 
         # NOTE ---------------------------------------------------------------------------------
-        t.note :path => '/m:mods/m:note'
+        t.note :path => ' /m:modsCollection/m:mods/m:note'
         t._note :path => '//m:note' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           n.id_at :path => '@ID', :accessor => lambda { |a| a.text }
@@ -282,7 +282,7 @@ module Mods
         end
 
         # ORIGIN_INFO --------------------------------------------------------------------------
-        t.origin_info :path => '/m:mods/m:originInfo'
+        t.origin_info :path => ' /m:modsCollection/m:mods/m:originInfo'
         t._origin_info :path => '//m:originInfo' do |n|
           # attributes
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
@@ -319,7 +319,7 @@ module Mods
         end # t.origin_info
 
         # PART -----------------------------------------------------------------------------------
-        t.part :path => '/m:mods/m:part'
+        t.part :path => ' /m:modsCollection/m:mods/m:part'
         t._part :path => '//m:part' do |n|
           # attributes
           n.id_at :path => '@ID', :accessor => lambda { |a| a.text }
@@ -360,7 +360,7 @@ module Mods
         end # t._part
 
         # PHYSICAL_DESCRIPTION -------------------------------------------------------------------
-        t.physical_description :path => '/m:mods/m:physicalDescription'
+        t.physical_description :path => ' /m:modsCollection/m:mods/m:physicalDescription'
         t._physical_description :path => '//m:physicalDescription' do |n|
           # attributes
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
@@ -385,7 +385,7 @@ module Mods
         end
 
         # RECORD_INFO --------------------------------------------------------------------------
-        t.record_info :path => '/m:mods/m:recordInfo'
+        t.record_info :path => ' /m:modsCollection/m:mods/m:recordInfo'
         t._record_info :path => '//m:recordInfo' do |n|
           # attributes
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
@@ -427,7 +427,7 @@ module Mods
         end # t._record_info
 
         # RELATED_ITEM-------------------------------------------------------------------------
-        t.related_item :path => '/m:mods/m:relatedItem' do |n|
+        t.related_item :path => ' /m:modsCollection/m:mods/m:relatedItem' do |n|
           # attributes
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           n.id_at :path => '@ID', :accessor => lambda { |a| a.text }
@@ -458,7 +458,7 @@ module Mods
         end
 
         # SUBJECT -----------------------------------------------------------------------------
-        t.subject :path => '/m:mods/m:subject'
+        t.subject :path => ' /m:modsCollection/m:mods/m:subject'
         t._subject :path => '//m:subject' do |n|
           # attributes
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
@@ -550,7 +550,7 @@ module Mods
         end # t.subject
 
         # TABLE_OF_CONTENTS ---------------------------------------------------------------------
-        t.tableOfContents :path => '/m:mods/m:tableOfContents'
+        t.tableOfContents :path => ' /m:modsCollection/m:mods/m:tableOfContents'
         t._tableOfContents :path => '//m:tableOfContents' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           n.shareable :path => '@shareable', :accessor => lambda { |a| a.text }
@@ -561,7 +561,7 @@ module Mods
         end
 
         # TARGET_AUDIENCE -----------------------------------------------------------------------
-        t.targetAudience :path => '/m:mods/m:targetAudience'
+        t.targetAudience :path => ' /m:modsCollection/m:mods/m:targetAudience'
         t._targetAudience :path => '//m:targetAudience' do |n|
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
           Mods::AUTHORITY_ATTRIBS.each { |attr_name|
@@ -573,7 +573,7 @@ module Mods
         end
 
         # TITLE_INFO ----------------------------------------------------------------------------
-        t.title_info :path => '/m:mods/m:titleInfo'
+        t.title_info :path => ' /m:modsCollection/m:mods/m:titleInfo'
         t._title_info :path => '//m:titleInfo' do |n|
           Mods::TitleInfo::ATTRIBUTES.each { |attr_name|
             if attr_name != 'type'
@@ -590,7 +590,7 @@ module Mods
           # convenience method
           n.sort_title :path => '.', :accessor => lambda { |node| 
             if node.type_at != "alternative" || (node.type_at == "alternative" && 
-                  mods_ng_xml.xpath('/m:mods/m:titleInfo', {'m' => Mods::MODS_NS}).size == 1)
+                  mods_ng_xml.xpath(' /m:modsCollection/m:mods/m:titleInfo', {'m' => Mods::MODS_NS}).size == 1)
               node.title.text + (!node.subTitle.text.empty? ? "#{@title_delimiter}#{node.subTitle.text}" : "" ) 
             end
           }
@@ -617,7 +617,7 @@ module Mods
         end # t._title_info
 
         # TYPE_OF_RESOURCE --------------------------------------------------------------------
-        t.typeOfResource :path => '/m:mods/m:typeOfResource'
+        t.typeOfResource :path => ' /m:modsCollection/m:mods/m:typeOfResource'
         t._typeOfResource :path => '//m:typeOfResource' do |n|
           n.collection :path => '@collection', :accessor => lambda { |a| a.text }
           n.displayLabel :path => '@displayLabel', :accessor => lambda { |a| a.text }
