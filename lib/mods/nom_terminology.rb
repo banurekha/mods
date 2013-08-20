@@ -93,6 +93,8 @@ module Mods
           Mods::LANG_ATTRIBS.each { |attr_name|
             n.send attr_name, :path => "@#{attr_name}", :accessor => lambda { |a| a.text }
           }
+          t.cite_key :path => '//m:identifier[@type="citekey"]'
+          t.unique_identifier :path => '//m:identifier[@type="accessnum"]'
         end
 
         # LANGUAGE -------------------------------------------------------------------------------
